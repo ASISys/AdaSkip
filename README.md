@@ -34,7 +34,80 @@ python ob3.py --model [llama/internlm/vicuna]
 ```
 
 ## Experiment
-Experiment
+### Prefill Task
+For Baseline models:
+```
+# how to run (Taking llama as an example, the same applies to internlm and vicuna.)
+cd Prefill/run
+# Early Exit:
+python run_llama_EE.py --model llama-EE-PREFILL --skip_full_layer_num [4/6/8]
+# SkipDecode:
+python run_llama_SD.py --model llama-SD-PREFILL --skip_full_layer_num [4/6/8]
+# Unifed Skipping:
+python run_llama_US.py --model llama-US-PREFILL --skip_full_layer_num [4/6/8]
+```
+
+For AdaSkip models:
+```
+# how to run (Taking llama as an example, the same applies to internlm and vicuna.)
+cd Prefill/run
+python run_llama_ADA.py --model llama-ADA-PREFILL --skip_sub_layer_num [8/12/16]
+```
+
+### Decode Task
+For Baseline models:
+```
+# how to run (Taking internlm as an example, the same applies to llama and vicuna.)
+cd Decode/run
+# Early Exit:
+python run_internlm_EE.py --model internlm-EE-DECODE --skip_full_layer_num [4/6/8]
+# SkipDecode:
+python run_internlm_SD.py --model internlm-SD-DECODE --skip_full_layer_num [4/6/8]
+# Unifed Skipping:
+python run_internlm_US.py --model internlm-US-DECODE --skip_full_layer_num [4/6/8]
+```
+
+For AdaSkip models:
+```
+# how to run (Taking internlm as an example, the same applies to llama and vicuna.)
+cd Decode/run
+python run_internlm_ADA.py --model internlm-ADA-DECODE --skip_sub_layer_num [8/12/16]
+```
+
+### E2E Task
+For Baseline models:
+```
+# how to run (Taking vicuna as an example, the same applies to llama and internlm.)
+cd E2E/run
+# Early Exit:
+python run_vicuna_EE.py --model vicuna-EE-E2E --skip_full_layer_num [4/6/8]
+# SkipDecode:
+python run_vicuna_SD.py --model vicuna-SD-E2E --skip_full_layer_num [4/6/8]
+# Unifed Skipping:
+python run_vicuna_US.py --model vicuna-US-E2E --skip_full_layer_num [4/6/8]
+```
+
+For AdaSkip models:
+```
+# how to run (Taking vicuna as an example, the same applies to llama and internlm.)
+cd E2E/run
+python run_vicuna_ADA.py --model vicuna-ADA-E2E --skip_sub_layer_num [8/12/16]
+```
+### Evaluation for Prefill/Decode/E2E Task
+```
+# how to run
+cd Eval
+python eval.py --model [The model name above (Eg: llama-EE-PREFILL)]
+```
+
+### Speed Test
+```
+# how to run
+cd Speed/run
+python run_llama_speed.py
+python run_internlm_speed.py
+python run_vicuna_speed.py
+```
 
 ## Paper
 If you think Adaskip is helpful, please cite this paper:
