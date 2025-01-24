@@ -1,0 +1,5 @@
+{
+    "llama": "/root/autodl-tmp/aaai-adaskip/models/llama3.1-8b-128k",
+    "internlm": "/root/autodl-tmp/aaai-adaskip/models/internlm-7b-8k",
+    "vicuna": "/root/autodl-tmp/aaai-adaskip/models/vicuna-7b-16k"
+}

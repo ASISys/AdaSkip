@@ -99,14 +99,14 @@ if __name__ == '__main__':
     args = parse_args()
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    model2path = json.load(open("../config/model2path.json", "r"))
-    model2maxlen = json.load(open("../config/model2maxlen.json", "r"))
+    model2path = json.load(open("../../config/model2path.json", "r"))
+    model2maxlen = json.load(open("../../config/model2maxlen.json", "r"))
 
     model_name = args.model
     max_length = model2maxlen[model_name]
     datasets = ["trec", "triviaqa"]
-    dataset2prompt = json.load(open("../config/dataset2prompt.json", "r"))
-    dataset2maxlen = json.load(open("../config/dataset2maxlen.json", "r"))
+    dataset2prompt = json.load(open("../../config/dataset2prompt.json", "r"))
+    dataset2maxlen = json.load(open("../../config/dataset2maxlen.json", "r"))
 
 
     if not os.path.exists("res"):
